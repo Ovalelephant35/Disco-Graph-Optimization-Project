@@ -19,6 +19,16 @@ The research problem focuses on optimizing the University Course Assignment Syst
 
 This problem is unique due to the flexibility it offers regarding the number of courses faculty members can take, distinct from typical assignment problems.
 
+\section*{Problem Constraints}
+
+\begin{enumerate}
+    \item \textbf{Faculty Categories:} Professors are divided into "x1," "x2," and "x3," each with specific course loads.
+    \item \textbf{Course Load Flexibility:} Faculty can handle multiple courses, and a single course can be assigned to multiple professors.
+    \item \textbf{Preference Lists:} Each faculty maintains a preference list of at least 12 courses, ordered by personal preference.
+    \item \textbf{Full Assignment Requirement:} Faculty must be fully assigned or not assigned at all to courses.
+    \item \textbf{Total Faculty Constraint:} The total number of faculty members across all categories must be less than 30.
+\end{enumerate}
+
 \section*{METHOD ADOPTED}
 
 Initially, a brute force method was attempted, but it proved impractical due to the large solution space. Python, with libraries like NumPy, NetworkX, and Matplotlib, was then employed. Each professor provides a preference list, and courses are assigned based on preferences.
