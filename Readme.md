@@ -11,30 +11,79 @@
 
 The research problem focuses on optimizing the University Course Assignment System, where faculty members are categorized into three groups: "x1," "x2," and "x3," each with different course load capacities. The challenge involves developing an assignment scheme that maximizes the number of courses assigned to faculty while considering their preferences and category-based constraints. Faculty members can take multiple courses in a semester, and a course can be assigned to multiple professors, with each assignment contributing to their course load. The unique aspect of this problem lies in the flexibility of course assignments, deviating from traditional Assignment problems, and the need to align with individual preferences within category constraints.
 
-Potential modifications to enhance the solution might include adjusting the maximum number of courses permissible for each professor category or expanding the number of categories beyond the existing three to create a more generalized solution. These modifications could provide a nuanced approach to course assignments, allowing for adaptability within the system while ensuring that courses are assigned based on faculty preferences. Developing a comprehensive and flexible assignment scheme that accommodates these considerations is crucial for optimizing the overall efficiency of the University Course Assignment System.
-
 
 ## Problem Constraints
 
 1. **Faculty Categories:** The faculty members are divided into three categories: "x1," "x2," and "x3," each with distinct course loads. "x1" handles 0.5 courses, "x2" manages 1 course, and "x3" takes on 1.5 courses per semester.
 
-2. **Course Load Flexibility:** Faculty members can handle multiple courses in a semester, and a single course can be assigned to multiple professors. This flexibility allows for diverse assignment possibilities, with each course contributing to the load of the assigned faculty members.
+2. **Course Load Flexibility:** Faculty members can handle multiple courses in a semester, and a single course can be assigned to multiple professors..
 
-3. **Preference Lists:** Each faculty member maintains a preference list of at least 12 courses, ordered by personal preference. Course assignments should align with these preferences, ensuring a more personalized and satisfactory allocation.
+3. **Preference Lists:** Each faculty member maintains a preference list of at least 12 courses, ordered by personal preference.
 
-4. **Full Assignment Requirement:** Faculty members must be fully assigned or not assigned at all to courses. This constraint ensures that each faculty member's course load is either complete or remains untouched, avoiding partial assignments.
+4. **Full Assignment Requirement:** Faculty members must be fully assigned or not assigned at all to courses.
 
-5. **Total Faculty Constraint:** The total number of faculty members across all categories ("x1," "x2," "x3") must be less than 30, adding an overarching constraint to manage the overall faculty composition within the University Course Assignment System.
-# University Course Assignment System Optimization
+5. **Total Faculty Constraint:** The total number of faculty members across all categories ("x1," "x2," "x3") must be less than 30.
 
 
-## Topics Covered
-- Bipartite Graphs
-- Maximum Bipartite Matching
-- Graph Optimization
-- NetworkX Library
-- Input Validation
-- Python Programming
+## Table of Contents
+
+1. [Bipartite Graphs](#bipartite-graphs)
+2. [Maximum Bipartite Matching](#maximum-bipartite-matching)
+3. [Graph Optimization](#graph-optimization)
+4. [NetworkX Library](#networkx-library)
+5. [Input Validation](#input-validation)
+6. [Python Programming](#python-programming)
+
+## Bipartite Graphs
+
+A bipartite graph is a type of graph where the set of vertices can be partitioned into two disjoint sets, and all edges connect vertices from different sets. In the context of university course assignment, the faculty members and the courses form the two sets, and edges represent preferences or possible assignments.
+
+### Code Snippet
+
+```python
+# Function to create the bipartite graph
+def create_bipartite_graph(faculty_categories, course_loads, preferences, all_courses):
+    G = nx.Graph()
+
+    # Add faculty nodes
+    G.add_nodes_from(faculty_categories, bipartite=0)
+
+    # Add course nodes
+    G.add_nodes_from(all_courses, bipartite=1)
+
+    # Add edges based on preferences
+    for faculty, pref_list in preferences.items():
+        for course in pref_list:
+            G.add_edge(faculty, course)
+
+    # Ensure that each faculty member is fully assigned or not assigned at all
+    for faculty in faculty_categories:
+        G.add_edge(faculty, f"Unassigned_{faculty}", weight=0)
+
+    return G
+
+## Maximum Bipartite Matching for University Course Assignment System
+
+## Introduction
+
+In the university course assignment system, the goal is to find the optimal assignment of courses to faculty members based on their preferences. This problem is modeled as a maximum bipartite matching in a graph, where the objective is to identify the largest set of non-overlapping edges, ensuring that no two edges share a common vertex.
+
+## Code Snippet
+
+```python
+# Function to perform maximum bipartite matching and calculate total load
+def perform_matching(G, faculty_categories, course_loads):
+    all_matchings = list(nx.bipartite.maximum_matching(G))
+
+    if not all_matchings:
+        print("No valid assignment found.")
+    else:
+        # Code for processing and displaying matchings
+        # ...
+
+        # Code for calculating and displaying total course load
+        # ...
+
 
 
 ## Code Overview
