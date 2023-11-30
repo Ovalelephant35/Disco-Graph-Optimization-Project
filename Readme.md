@@ -60,13 +60,11 @@ def create_bipartite_graph(faculty_categories, course_loads, preferences, all_co
     for faculty in faculty_categories:
         G.add_edge(faculty, f"Unassigned_{faculty}", weight=0)
 
-    return G
+    return G 
+```
+
 
 ## Maximum Bipartite Matching for University Course Assignment System
-
-## Introduction
-
-In the university course assignment system, the goal is to find the optimal assignment of courses to faculty members based on their preferences. This problem is modeled as a maximum bipartite matching in a graph, where the objective is to identify the largest set of non-overlapping edges, ensuring that no two edges share a common vertex.
 
 ## Code Snippet
 
@@ -83,7 +81,30 @@ def perform_matching(G, faculty_categories, course_loads):
 
         # Code for calculating and displaying total course load
         # ...
+```
+ ## Graph Optimization
 
+Graph optimization involves finding the best solution from all feasible solutions in a graph. In the university course assignment system, optimization aims to maximize the number of courses assigned to faculty members while adhering to constraints.
+
+```python
+# Main function to orchestrate the entire process
+def optimize_course_assignment():
+    try:
+        # Code for user input and initialization
+        # ...
+
+        # Code for creating bipartite graph
+        G = create_bipartite_graph(faculty_categories, course_loads, preferences, all_courses)
+
+        # Code for drawing the bipartite graph
+        # ...
+
+        # Code for performing maximum bipartite matching
+        perform_matching(G, faculty_categories, course_loads)
+
+    except ValueError as e:
+        print(f"Error: {e}")
+```
 
 
 ## Code Overview
@@ -101,6 +122,6 @@ The provided Python code uses the NetworkX library for graph representation and 
 ## Directory Structure
 
 ```plaintext
-- optimize_course_assignment.py   # Main Python script
+- Disco_Final.py   # Main.tex
 - README.md                        # Project documentation
 
