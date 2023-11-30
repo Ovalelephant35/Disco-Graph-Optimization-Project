@@ -27,12 +27,12 @@ The research problem focuses on optimizing the University Course Assignment Syst
 
 ## Table of Contents
 
-1. [Bipartite Graphs](#bipartite-graphs)
-2. [Maximum Bipartite Matching](#maximum-bipartite-matching)
-3. [Graph Optimization](#graph-optimization)
-4. [NetworkX Library](#networkx-library)
-5. [Input Validation](#input-validation)
-6. [Python Programming](#python-programming)
+1. [Bipartite Graphs]
+2. [Maximum Bipartite Matching]
+3. [Graph Optimization]
+4. [NetworkX Library]
+
+
 
 ## Bipartite Graphs
 
@@ -64,7 +64,7 @@ def create_bipartite_graph(faculty_categories, course_loads, preferences, all_co
 ```
 
 
-## Maximum Bipartite Matching for University Course Assignment System
+## Maximum Bipartite Matching 
 
 ## Code Snippet
 
